@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "node -v && npm ls @types/node && tsc"
+    "build": "node -v && npm ls @types/node && tsc",
+    "start": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -31,7 +32,6 @@
     "@types/jsonwebtoken": "^9.0.6",
     "@types/multer": "^1.4.11",
     "@types/node": "^20.12.12",
-    "@types/joi": "^17.2.3",
-    "@types/mongoose": "^5.10.5"
+    "@types/path": "^0.12.7"
   }
 }
