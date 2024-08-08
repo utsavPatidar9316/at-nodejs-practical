@@ -1,19 +1,16 @@
 {
-  "name": "blog",
+  "name": "at-nodejs-practical",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "node -v && npm ls @types/node && tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/cors": "^2.8.17",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.12.12",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -29,7 +26,12 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.6",
-    "@types/multer": "^1.4.11"
+    "@types/multer": "^1.4.11",
+    "@types/node": "^20.12.12",
+    "@types/joi": "^17.2.3",
+    "@types/mongoose": "^5.10.5"
   }
 }

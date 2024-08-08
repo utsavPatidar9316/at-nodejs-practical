@@ -7,8 +7,8 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "types": ["node"], // Add this line
-    "typeRoots": ["./node_modules/@types"] // Add this line
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"]
   },
   "include": ["src/**/*"]
 }
