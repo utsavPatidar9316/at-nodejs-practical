@@ -34,9 +34,9 @@ jobs:
 
     - name: 'Create .env file'
       run: |
-        echo "MONGO_URL=\"mongodb+srv://utsav:utsav22082003@cluster0.gegt41i.mongodb.net/?retryWrites=true&w=majority\"" > .env
-        echo "PORT=5000" >> .env
-        echo "JWT_SECRET='at_nodejs_practical'" >> .env
-        cat .env  # Display the contents for verification
+       echo "MONGO_URL=mongodb+srv://utsav:utsav22082003@cluster0.gegt41i.mongodb.net/?retryWrites=true&w=majority" > .env
+       echo "PORT=5000" >> .env
+       echo "JWT_SECRET=at_nodejs_practical" >> .env
+
 
       # NOTE: Avoid echoing sensitive information in logs. Comment this step out in production.
