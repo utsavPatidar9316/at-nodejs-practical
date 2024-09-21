@@ -45,8 +45,4 @@ jobs:
         pm2 save  # Save the PM2 process list
       shell: bash
 
-    - name: Check PM2 logs
-      run: pm2 logs at-nodejs-practical --lines 50
-      shell: bash
-
       # NOTE: Avoid echoing sensitive information in logs. Comment this step out in production.
