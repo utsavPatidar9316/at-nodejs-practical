@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-
     runs-on: self-hosted
     
     defaults:
@@ -21,13 +20,14 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: List files in backend
-      run: ls -al  # No need for working-directory here as it’s set globally
+      run: ls -al  # List files in the backend directory
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+        cache: 'npm-${{ matrix.node-version }}'  # Cache by Node.js version
+        cache-dependency-path: './backend/package-lock.json'  # Path to your lock file
 
     - name: Create .env file from GitHub secret
       run: echo "${{ secrets.PROD_ENV_FILE }}" > .env
