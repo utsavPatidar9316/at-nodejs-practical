@@ -42,4 +42,8 @@ jobs:
     - name: Show secret value for debugging
       run: echo "${{ secrets.PROD_ENV_FILE }}"
       shell: bash
+
+    - name: Check .env file contents
+      run: cat .env
+      shell: bash
       # NOTE: Avoid echoing sensitive information in logs. Comment this step out in production.
