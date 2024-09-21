@@ -38,3 +38,8 @@ jobs:
 
     - name: Build the project
       run: npm run build --if-present
+      
+    - name: Show secret value for debugging
+      run: echo "${{ secrets.PROD_ENV_FILE }}"
+      shell: bash
+
