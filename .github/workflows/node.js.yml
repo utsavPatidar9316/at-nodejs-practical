@@ -19,9 +19,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: List files in backend
-      run: ls -al  # List files to ensure correct structure
-
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
@@ -29,21 +26,17 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './backend/package-lock.json'  # Point to the correct lock file
 
-    - name: Create .env file from GitHub secret
-      run: echo "${{ secrets.PROD_ENV_FILE }}" > .env
-      shell: bash
-
     - name: Install dependencies
       run: npm ci
 
     - name: Build the project
       run: npm run build --if-present
 
-    - name: Show secret value for debugging
-      run: echo "${{ secrets.PROD_ENV_FILE }}"
-      shell: bash
+    - name: 'Create .env file'
+      run: |
+       echo "MONGO_URL=mongodb+srv://utsav:utsav22082003@cluster0.gegt41i.mongodb.net/?retryWrites=true&w=majority" > .env
+       echo "PORT=5000" >> .env
+       echo "JWT_SECRET=at_nodejs_practical" >> .env
 
-    - name: Check .env file contents
-      run: cat .env
-      shell: bash
+
       # NOTE: Avoid echoing sensitive information in logs. Comment this step out in production.
