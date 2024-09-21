@@ -4,7 +4,7 @@ import connectDB from "./utils/connectDb";
 
 (async () => {
   try {
-    const port = getEnv("PORT") || 8000;
+    const port = getEnv("PORT") || 5000;
     await connectDB();
     app.listen(port, async () => {
       console.log(`Server running at port ${port}`);
