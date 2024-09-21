@@ -20,14 +20,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
+    - name: List files in backend
+      run: ls -al ./backend
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
-    - name: List files in backend
-      run: ls -al ./backend
 
     - name: Create .env file from GitHub secret
       run: echo "${{ secrets.PROD_ENV_FILE }}" > ./backend/.env
