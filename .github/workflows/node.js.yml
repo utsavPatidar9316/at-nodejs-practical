@@ -26,7 +26,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm-${{ matrix.node-version }}'  # Cache by Node.js version
+        cache: 'npm'  # Cache by Node.js version
         cache-dependency-path: './backend/package-lock.json'  # Path to your lock file
 
     - name: Create .env file from GitHub secret
