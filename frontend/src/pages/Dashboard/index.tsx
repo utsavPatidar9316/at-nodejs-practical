@@ -36,10 +36,15 @@ const schema = yup.object().shape({
     .oneOf([yup.ref("password"), undefined], "Passwords must match")
     .required("Confirm Password is required"),
 });
+type user = {
+  userName: string;
+  email: string;
+  password: string;
+};
 export default function MenuAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [openProfile, setOpenProfile] = React.useState(false);
-  const [userData, setUserData] = React.useState(null);
+  const [userData, setUserData] = React.useState<user | null>(null);
   const [isPassword, setIsPassword] = React.useState(false);
   const nav = useNavigate();
   const {
@@ -170,8 +175,8 @@ export default function MenuAppBar() {
               >
                 <AccountCircle />
               </IconButton>
-              <Typography variant="h6">{user.userName}</Typography>
-              <Typography variant="body1">{user.email}</Typography>
+              <Typography variant="h6">{userData?.userName}</Typography>
+              <Typography variant="body1">{userData?.email}</Typography>
               <Box
                 component="form"
                 noValidate
