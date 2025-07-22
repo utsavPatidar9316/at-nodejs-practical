@@ -6,7 +6,7 @@ const connectDB = async () => {
     set("strictQuery", true);
     await connect(
       String(getEnv("MONGO_URL")) ||
-        "mongodb+srv://utsav:utsav22082003@cluster0.gegt41i.mongodb.net/?retryWrites=true&w=majority"
+        "mongodb+srv://utsavnetpairinfotech:ZCfaWUZcDwhX4VFn@cloud-demo.yewt81y.mongodb.net/at-node-js-practical"
     );
     console.log("Database connected successfully !!");
   } catch (error) {
